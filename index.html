@@ -25,6 +25,120 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    
+    <!-- Modal CSS -->
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+      .modal-content {
+        background-color: #1f2122;
+        margin: 5% auto;
+        padding: 0;
+        border: 1px solid #27292a;
+        width: 90%;
+        max-width: 500px;
+        border-radius: 8px;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+      }
+      .modal-image {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+      }
+      .modal-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .modal-image::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        background: linear-gradient(to top, #1f2122, transparent);
+      }
+      .close-modal {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        z-index: 1;
+      }
+      .close-modal:hover {
+        color: #fff;
+      }
+      .modal-title {
+        color: #fff;
+        margin: 25px 0 15px;
+        font-size: 28px;
+        font-weight: 600;
+        padding: 0 30px;
+      }
+      .modal-body {
+        color: #fff;
+        margin-bottom: 30px;
+        padding: 0 30px;
+      }
+      .modal-body p {
+        font-size: 16px;
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+      .modal-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding: 0 30px 30px;
+      }
+      .modal-buttons .main-button {
+        margin: 0;
+      }
+      .cancel-button {
+        background: transparent;
+        border: 1px solid #27292a;
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .cancel-button:hover {
+        background: #27292a;
+        color: #fff;
+      }
+      @media (max-width: 576px) {
+        .modal-content {
+          margin: 10% auto;
+          width: 95%;
+        }
+        .modal-image {
+          height: 200px;
+        }
+        .modal-title {
+          font-size: 24px;
+        }
+        .modal-buttons {
+          flex-direction: column;
+        }
+      }
+    </style>
 
   </head>
 
@@ -212,7 +326,7 @@
         </section>
 
 
-          <section id="tournaments"></section>
+          <section id="tournaments">
           <!-- ***** Gaming Library Start ***** -->
           <div class="gaming-library" id="tournaments">
             <div class="col-lg-12">
@@ -266,7 +380,77 @@
               </div>
             </div>
           </div>
+        </section>
           <!-- ***** Gaming Library End ***** -->
+          <section id="ff-001-winners">
+          <!-- ***** Tournament Winners Start ***** -->
+          <div class="tournament-winners">
+            <div class="col-lg-12">
+              <div class="heading-section">
+                <h4><em>Tournament</em> Winners</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="tournament-details">
+                  <div class="thumb">
+                    <img src="assets/images/freefire.jpg" alt="FreeFire Tournament #001">
+                    <div class="tournament-info">
+                      <h4>FreeFire Tournament #001</h4>
+                      <div class="tournament-meta">
+                        <p><i class="fa fa-calendar"></i> Date: 30th March 2024</p>
+                        <p><i class="fa fa-trophy"></i> Status: Completed</p>
+                        <p><i class="fa fa-users"></i> Total Teams: 12</p>
+                        <p><i class="fa fa-money"></i> Prize Pool: ₹350</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="winners-list">
+                  <div class="heading-section">
+                    <h4><em>Top</em> Winners</h4>
+                  </div>
+                  <ul>
+                    <li class="first-place">
+                      <span class="rank">01</span>
+                      <img src="assets/images/avatar-01.jpg" alt="" style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                      <h6><i class="fa fa-trophy"></i> Shadow Reapers</h6>
+                      <span class="prize">₹200</span>
+                    </li>
+                    <li class="second-place">
+                      <span class="rank">02</span>
+                      <img src="assets/images/avatar-02.jpg" alt="" style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                      <h6><i class="fa fa-medal"></i> Blaze Hunters</h6>
+                      <span class="prize">₹100</span>
+                    </li>
+                    <li class="third-place">
+                      <span class="rank">03</span>
+                      <img src="assets/images/avatar-03.jpg" alt="" style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                      <h6><i class="fa fa-medal"></i> Venom Vortex</h6>
+                      <span class="prize">₹30</span>
+                    </li>
+                    <!-- <li>
+                      <span class="rank">04</span>
+                      <img src="assets/images/avatar-04.jpg" alt="" style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                      <h6><i class="fa fa-star"></i> Team Delta</h6>
+                      <span class="prize">₹100</span>
+                    </li>
+                    <li>
+                      <span class="rank">05</span>
+                      <img src="assets/images/avatar-01.jpg" alt="" style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                      <h6><i class="fa fa-star"></i> Team Epsilon</h6>
+                      <span class="prize">₹50</span>
+                    </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+          <!-- ***** Tournament Winners End ***** -->
+
         </div>
       </div>
     </div>
@@ -278,12 +462,31 @@
         <div class="col-lg-12">
           <p>Copyright © 2025 <a href="index.html">Game-X ESPORTS Tournaments</a> Company. All rights reserved. 
           
-          <br>Design: <a href="tel:8750098715" target="_blank" title="free CSS templates">Vedaang Sharma</a></p>
+          <br>Design: <a href="tel:8750098715" target="_blank" title="Vedaang Sharma">Vedaang Sharma</a> and <a href="tel:9983361865" target="_blank" title="Kartik Sharma">Kartik Sharma</a></p>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- Modal -->
+  <div id="gameModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-image">
+        <img src="assets/images/ff-001.jpg" alt="Tournament Winners">
+      </div>
+      <h2 class="modal-title">Tournament Winners 🏆</h2>
+      <div class="modal-body">
+        <p>See the Winners of FreeFire Tournament #001 🥇</p>
+        <div class="modal-buttons">
+          <div class="main-button">
+            <a href="#ff-001-winners" onclick="handleTournamentClick(event)">View Tournaments</a>
+          </div>
+          <button class="cancel-button" onclick="closeModal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
@@ -296,6 +499,197 @@
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
 
+  <!-- Modal JavaScript -->
+  <script>
+    // Get the modal
+    var modal = document.getElementById("gameModal");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close-modal")[0];
+    
+    // When the page loads, show the modal
+    window.onload = function() {
+      modal.style.display = "block";
+    }
+    
+    // Function to close modal
+    function closeModal() {
+      modal.style.display = "none";
+    }
+    
+    // Function to handle tournament button click
+    function handleTournamentClick(event) {
+      event.preventDefault();
+      closeModal();
+      document.getElementById('ff-001-winners').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = closeModal;
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+  <style>
+    .tournament-winners {
+      margin-top: 80px;
+      margin-bottom: 60px;
+      padding: 40px 0;
+    }
+    .tournament-details {
+      background-color: #1f2122;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .tournament-details .thumb {
+      position: relative;
+      overflow: hidden;
+    }
+    .tournament-details .thumb img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .tournament-details .thumb:hover img {
+      transform: scale(1.05);
+    }
+    .tournament-info {
+      padding: 30px;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      color: #fff;
+    }
+    .tournament-info h4 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    .tournament-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    .tournament-meta p {
+      margin: 0;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+    }
+    .tournament-meta i {
+      margin-right: 10px;
+      color: #ec6090;
+      width: 20px;
+    }
+    .winners-list {
+      background-color: #1f2122;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      height: 100%;
+    }
+    .winners-list ul {
+      margin-top: 20px;
+    }
+    .winners-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #27292a;
+      transition: transform 0.3s ease;
+    }
+    .winners-list li:hover {
+      transform: translateX(5px);
+    }
+    .winners-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .first-place {
+      background: linear-gradient(90deg, rgba(236, 96, 144, 0.1), transparent);
+      padding: 15px;
+      border-radius: 8px;
+      margin: -15px -15px 20px -15px;
+    }
+    .second-place {
+      background: linear-gradient(90deg, rgba(236, 96, 144, 0.05), transparent);
+      padding: 15px;
+      border-radius: 8px;
+      margin: -15px -15px 20px -15px;
+    }
+    .third-place {
+      background: linear-gradient(90deg, rgba(236, 96, 144, 0.03), transparent);
+      padding: 15px;
+      border-radius: 8px;
+      margin: -15px -15px 20px -15px;
+    }
+    .rank {
+      background-color: #ec6090;
+      color: #fff;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .first-place .rank {
+      background-color: #ffd700;
+      color: #000;
+    }
+    .second-place .rank {
+      background-color: #c0c0c0;
+    }
+    .third-place .rank {
+      background-color: #cd7f32;
+    }
+    .winners-list h6 {
+      margin: 0;
+      flex-grow: 1;
+      font-size: 16px;
+    }
+    .winners-list h6 i {
+      color: #ec6090;
+      margin-right: 8px;
+    }
+    .first-place h6 i {
+      color: #ffd700;
+    }
+    .second-place h6 i {
+      color: #c0c0c0;
+    }
+    .third-place h6 i {
+      color: #cd7f32;
+    }
+    .prize {
+      color: #ec6090;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    @media (max-width: 991px) {
+      .tournament-meta {
+        grid-template-columns: 1fr;
+      }
+      .tournament-details .thumb img {
+        height: 300px;
+      }
+    }
+  </style>
 
   </body>
 
